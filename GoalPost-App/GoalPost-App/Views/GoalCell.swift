@@ -14,6 +14,7 @@ class GoalCell: UITableViewCell {
     @IBOutlet weak var goalDescriptionLabel: UILabel!
     @IBOutlet weak var goalTypeLabel: UILabel!
     @IBOutlet weak var goalProgressLabel: UILabel!
+    @IBOutlet weak var goalCompletionView: UIView!
     
     
     //MARK: Function
@@ -21,6 +22,7 @@ class GoalCell: UITableViewCell {
         goalDescriptionLabel.text = goal.goalDescription
         goalTypeLabel.text = goal.goalType
         goalProgressLabel.text = String(describing: goal.goalProgressValue)
+        goalCompletionView.isHidden = goal.goalProgressValue != goal.goalCompletionValue
     }
     
 }

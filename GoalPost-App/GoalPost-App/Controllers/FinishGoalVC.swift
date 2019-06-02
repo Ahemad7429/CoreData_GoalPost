@@ -39,6 +39,7 @@ class FinishGoalVC: UIViewController {
             else {
             compeltion(false)
             return }
+        managedContext.undoManager = UndoManager()
         let goal = Goal(context: managedContext)
         goal.goalDescription = self.goalDescription
         goal.goalType = self.goalType.rawValue
