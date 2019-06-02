@@ -11,8 +11,10 @@ import CoreData
 
 class GoalsVC: UIViewController {
 
+    //MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
     
+    //MARK: LifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -20,6 +22,7 @@ class GoalsVC: UIViewController {
         tableView.isHidden = false
     }
 
+    //MARK: Actions
     @IBAction func addGoalButtonWasTapped(_ sender: UIButton) {
         guard let createGoalVC = storyboard?.instantiateViewController(withIdentifier: "CreateGoalVC") as? CreateGoalVC else { return }
         presentDetail(createGoalVC)
@@ -27,6 +30,7 @@ class GoalsVC: UIViewController {
     
 }
 
+//MARK: TableView DataSource & Delegate Methods
 extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
